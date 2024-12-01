@@ -1,0 +1,140 @@
+.wrapper.home section {
+    width: 100vw;
+
+
+
+}
+
+.wrapper.home section:first-child {
+    padding: 0 8dvw;
+    padding-top: 10dvh;
+    z-index: 1000;
+    position: relative
+}
+
+
+.wrapper.home section:first-child .first-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 10dvh;
+    gap: 1rem;
+    height: 70dvh;
+}
+
+@media (max-width: 860px) {
+
+    .wrapper.home section:first-child .first-details {
+
+        align-items: center;
+    }
+
+    .wrapper.home section:first-child .first-details * {
+        text-align: center;
+    }
+}
+
+.wrapper.home section:first-child .first-details .logo {
+    width: clamp(5rem, 8vw, 30rem);
+
+}
+
+.wrapper.home section:first-child .first-details .title {
+    font-size: clamp(8rem, 12vw, 30rem);
+    font-weight: 900;
+    vertical-align: bottom;
+    line-height: .8;
+    font-family: "Emberly";
+    letter-spacing: .2rem;
+}
+
+.wrapper.home section:first-child .first-details .subtitle {
+    font-family: "NeueRegrade";
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: fit-content;
+    vertical-align: top;
+    line-height: .8;
+
+}
+
+.wrapper.home section:first-child .first-details .subtitle span {
+    font-family: 'Emberly';
+    color: var(--accent-color);
+    font-weight: 900;
+    font-size: 3rem;
+}
+
+
+
+.wrapper.home section:first-child a {
+    font-family: 'Emberly';
+    display: block;
+    background-color: var(--accent-color);
+    padding: .5rem .8rem;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 3rem;
+    width: fit-content;
+    transition: .3s;
+
+}
+
+.wrapper.home section:first-child a:hover {
+    transform: scaleX(1.1);
+    font-weight: 900;
+    letter-spacing: .4rem;
+}
+
+
+
+.wrapper.home section:nth-child(2) {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper.home section:nth-child(2) .flowerSVG {
+    margin-right: auto;
+    width: fit-content;
+    margin-bottom: auto;
+    transform: translateY(-50%) translateX(5%);
+}
+
+.wrapper.home section:nth-child(2) .flowerSVG img {
+    width: 30vw;
+}
+
+.wrapper.home section:nth-child(2) .title {
+
+    margin: 0 8vw;
+    transform: translateY(-50%);
+}
+
+.wrapper.home section:nth-child(2) .title a:hover {
+    letter-spacing: .2rem;
+
+}
+
+.wrapper.home section:nth-child(2) .title h1,
+.wrapper.home section:nth-child(2) .title a {
+    font-size: 4.5rem;
+    font-weight: 900;
+    transition: .3s;
+}
+
+.wrapper.home section:nth-child(2) .subtitle {
+    color: var(--accent-color);
+    font-family: 'NeueRegrade';
+    font-size: 3rem;
+}
+
+.wrapper.home section:last-child {
+    height: 60dvh;
+    background-color: red;
+
+
+}

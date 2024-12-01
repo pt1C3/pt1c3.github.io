@@ -1,0 +1,39 @@
+.App{
+  background-color: var(--black-color);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.App>.logo{
+  width: 100dvw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 1.5rem;
+  left:0;
+  z-index: 999;
+  mix-blend-mode: difference;
+
+}
+
+.App>.logo>a {
+  font-family: 'Emberly';
+  text-decoration: none;
+  color: #FFF;
+  font-weight: 700;
+  font-variation-settings: "wdth" 90;
+  letter-spacing: .1rem;
+  font-size: 2rem;
+  transition: .3s;
+  width: fit-content;
+
+}
+
+.App>.logo>a:hover {
+  font-weight: 900;
+  letter-spacing: .2rem;
+  font-variation-settings: "wdth" 100;
+
+}

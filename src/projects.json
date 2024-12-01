@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Creativity Takes Courage",
+        "categories": ["Poster"],
+        "description": "A poster design featuring the message 'Creativity Takes Courage,' with a focus on typography."
+    },
+    {
+        "id": 2,
+        "title": "Starry Night",
+        "categories": ["Other"],
+        "description": "A project inspired by Van Gogh's 'Starry Night', using a color palette that captures the essence of the iconic painting."
+    },
+    {
+        "id": 3,
+        "title": "Weather Icons",
+        "categories": ["Other"],
+        "description": "A icon set designed for a weather application, featuring clean and intuitive weather symbols."
+    },
+    {
+        "id": 4,
+        "title": "GreenThreads",
+        "categories": ["Web", "Branding"],
+        "description": "GreenThreads is a fashion brand committed to eco-friendly materials and ethical labor practices, offering stylish clothing with a sustainable touch."
+    },
+    {
+        "id": 5,
+        "title": "No Title Yet",
+        "categories": ["Other"],
+        "description": "An informative infographic illustrating the benefits of quality sleep and its impact on overall health."
+    },
+    {
+        "id": 6,
+        "title": "Nexara",
+        "categories": ["Branding"],
+        "description": "Comprehensive branding suite, including business card, letterhead, and social media graphics, tailored for a tech company."
+    },
+    {
+        "id": 7,
+        "title": "No Title Yet",
+        "categories": ["Other"],
+        "description": "A detailed magazine layout celebrating classic race cars, featuring high-quality images and engaging content."
+    },
+    {
+        "id": 8,
+        "title": "TaskFlow",
+        "categories": ["Mobile"],
+        "description": "UI design for TaskFlow, a mobile project management app that includes features for project overviews, task tracking, and team collaboration."
+    },
+    {
+        "id": 9,
+        "title": "PureGlow Naturals",
+        "categories": ["Other"],
+        "description": "A series of eye-catching social media posts for PureGlow Naturals, an organic skincare brand, highlighting their natural beauty products."
+    },
+    {
+        "id": 10,
+        "title": "Echos of the Future",
+        "categories": ["Other"],
+        "description": "Album cover design for 'Echos of the Future', a synthwave album that blends retro and futuristic elements."
+    }
+]

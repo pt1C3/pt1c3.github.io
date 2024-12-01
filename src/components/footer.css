@@ -1,0 +1,9 @@
+footer{
+    /*background-color: var(--white-color);*/
+    color: var(--black-color);
+    height: 60dvh;
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }

@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Emberly';
+  src: url('./fonts/Emberly.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NeueRegrade';
+  src: url('./fonts/Neue Regrade.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+
+}
+
+:root {
+  --white-color: #fafafa;
+  --black-color: #050505;
+  --accent-color: #6600ff;
+  --light-accent-color: #CBB1FF;
+  --accent-color-50: #6600ff80;
+  --inverted-accent-color: #99ff00;
+  --inverted-accent-color-transp: #99ff00aa;
+  --regular-size: 1.2rem;
+  --header-1-size: 4rem;
+  --header-2-size: 3rem;
+  --header-3-size: 2rem;
+  --gradient: linear-gradient(45deg, #7333ff, #be33ff);
+  color-scheme: dark;
+  accent-color: var(--accent-color);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: none!important;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Emberly';
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: var(--header-1-size);
+  font-weight: 900;
+}
+
+h2 {
+  font-size: var(--header-2-size);
+  font-weight: 800;
+
+}
+
+h3 {
+  font-size: var(--header-3-size);
+  font-weight: 700;
+
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  font-weight: 100;
+}
+body {
+  cursor: none!important;
+  font-family: 'NeueRegrade';
+  color: var(--white-color);
+  font-size: var(--font-size);
+  overflow-x: hidden;
+  
+}
+
+
+
+::selection {
+  background: var(--inverted-accent-color-transp);
+  color: var(--white-color);
+}
+
+
+::-webkit-scrollbar{
+  width: .5rem!important;
+  /* Width of the scrollbar */
+}
+
+
+::-webkit-scrollbar-track{
+  background: #050505!important;
+
+}
+
+::-webkit-scrollbar-thumb{
+  background: #FAFAFA!important;
+  opacity:1!important;
+border-radius: 0!important;
+ 
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #7333FF!important;
+  /* Color of the scrollbar thumb on hover */
+}
+
+.wrapper {
+  min-height: 100dvh;
+  position: relative;
+}
