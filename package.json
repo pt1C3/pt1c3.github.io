@@ -2,7 +2,7 @@
   "name": "1c3-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pt1c3.github.io/portoflio",
+  "homepage": "https://pt1c3.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
