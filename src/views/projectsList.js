@@ -3,7 +3,6 @@ import { useEffect, useState, useRef } from 'react';
 import './projectsList.css';
 import { Tilt } from 'react-tilt';
 import { Helmet } from 'react-helmet';
-import flowerSVG from '../images/SVG/8 flower.svg'
 import projects from '../projects.json'; // Import the JSON data
 
 // Function to import and sort images from a directory
@@ -30,21 +29,60 @@ const importAll = (r) => {
 // Import images from the 'images' directory
 const thumbnails = importAll(require.context('../images/projects/thumbnails', false, /\.(png|jpe?g|svg)$/));
 
-const BottomNav = () => {
+const BottomNav = ({ selectedCategories, onSelectCategory, footerRef }) => {
+  useEffect(() => {
+    const adjustBottomBarPosition = () => {
+      const bottomBar = document.querySelector('.bottom-bar');
+      const footer = footerRef.current;
+      const footerRect = footer.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      if (footerRect.top < viewportHeight) {
+        bottomBar.style.bottom = `${viewportHeight - footerRect.top}px`; // 16px for some padding
+      } else {
+        bottomBar.style.bottom = '0';
+      }
+    };
+
+    window.addEventListener('scroll', adjustBottomBarPosition);
+    window.addEventListener('resize', adjustBottomBarPosition);
+    adjustBottomBarPosition();
+
+    return () => {
+      window.removeEventListener('scroll', adjustBottomBarPosition);
+      window.removeEventListener('resize', adjustBottomBarPosition);
+    };
+  }, [footerRef]);
+
+  const categories = ["BRANDING", "UI/UX", "OTHER"];
   return (
     <div className="bottom-bar">
-      <Link to="/">POSTER</Link>
-      <Link to="">BRANDING</Link>
-      <Link to="">WEB</Link>
-      <Link to="">MOBILE</Link>
-      <Link to="">OTHER</Link>
+      {categories.map((category) => (
+        <Link
+          key={category}
+          to=""
+          className={selectedCategories.includes(category) ? "selected" : ""}
+          onClick={() => onSelectCategory(category)}
+        >
+          {category}
+        </Link>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default function ProjectsList() {
+export default function ProjectsList({ footerRef }) {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const projectsGridRef = useRef(null); // Ref for the container of the project cards
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const projectsGridRef = useRef(null); 
+  
+  const handleSelectCategory = (category) => {
+    setSelectedCategories((prevCategories) =>
+      prevCategories.includes(category)
+        ? prevCategories.filter((cat) => cat !== category)
+        : [...prevCategories, category]
+    );
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -102,9 +140,9 @@ export default function ProjectsList() {
   //Hover tilt animation
   const defaultOptions = {
     reverse: true,  // reverse the tilt direction
-    max: 15,     // max tilt rotation (degrees)
-    perspective: 2000,   // Transform perspective, the lower the more extreme the tilt gets.
-    scale: .98,    // 2 = 200%, 1.5 = 150%, etc..
+    max: 16,     // max tilt rotation (degrees)
+    perspective: 1600,   // Transform perspective, the lower the more extreme the tilt gets.
+    scale: 1,    // 2 = 200%, 1.5 = 150%, etc..
     speed: 1000,   // Speed of the enter/exit transition
     transition: true,   // Set a transition on enter/exit.
     axis: null,   // What axis should be disabled. Can be X or Y.
@@ -114,7 +152,8 @@ export default function ProjectsList() {
 
   return (
     <>
-      <div className="wrapper">
+    <Helmet> <title>Projects - 1C3 | Rafael Silva</title></Helmet>
+      <div className="wrapper projects-list">
         <header className='header'>
           <h1 className='title'>Projects</h1>
           <p className='subtitle'>A portfolio of <span>thoughtfully</span> crafted designs with purpose and poise.</p>
@@ -123,23 +162,26 @@ export default function ProjectsList() {
           <div className='projects-grid' ref={projectsGridRef}>
             {
               projects.map((item) => (
-                <Tilt options={defaultOptions} key={item.id}>
-                  <Link to={"/project/" + item.id} className='project-card'>
-                    <img src={thumbnails[item.id]} alt={item.title} />
-                    <div className='info'>
-                      <h2 className='title'>{item.title}</h2>
-                      <h4 className='category'>{categoriesToString(item.categories)}</h4>
-                      <hr className='divider' />
-                      <p className='description'>{item.description}</p>
-                    </div>
-                  </Link>
-                </Tilt>
+                thumbnails[item.id] && ( // If it has thumbnail image
+                  <Tilt options={defaultOptions} key={item.id}>
+                    <Link to={"/project/" + item.id} className='project-card'>
+                      <img src={thumbnails[item.id]} alt={item.title} lazy/>
+                      <div className='info'>
+                        <h2 className='title'>{item.title}</h2>
+                        <h4 className='category'>{categoriesToString(item.categories)}</h4>
+                        <hr className='divider' />
+                        <p className='description'>{item.description}</p>
+                      </div>
+                    </Link>
+                  </Tilt>
+                )
+
               ))
             }
           </div>
         </section>
       </div>
-      <BottomNav />
+      <BottomNav selectedCategories={selectedCategories} onSelectCategory={handleSelectCategory} footerRef={footerRef} />
     </>
   )
 }

@@ -5,35 +5,22 @@
 }
 
 
-.App>.logo{
+.App>.nav{
   width: 100dvw;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: fixed;
-  top: 1.5rem;
+  top: 0;
   left:0;
   z-index: 999;
+  padding: clamp(1.6rem, 1.6vw, 8rem);
   mix-blend-mode: difference;
-
 }
 
-.App>.logo>a {
-  font-family: 'Emberly';
-  text-decoration: none;
-  color: #FFF;
-  font-weight: 700;
-  font-variation-settings: "wdth" 90;
-  letter-spacing: .1rem;
-  font-size: 2rem;
-  transition: .3s;
-  width: fit-content;
 
-}
 
-.App>.logo>a:hover {
-  font-weight: 900;
-  letter-spacing: .2rem;
-  font-variation-settings: "wdth" 100;
 
+.App>.nav>a>img{
+  width: clamp(2rem, 3.6vw, 8rem);
 }

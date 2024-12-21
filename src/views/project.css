@@ -1,0 +1,203 @@
+.project-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project-page>* {
+    padding: 5rem 4vw;
+}
+
+.nav.project-nav {
+    justify-content: space-between;
+
+}
+
+
+.project-page>*:first-child {
+    padding-top: 8rem;
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+
+.project-page>*:first-child>* {
+    height: 100%;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.project-page>*:first-child .logo {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .project-page>*,
+    .project-page>.tools>.tools-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.project-page>.branding {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem 4vw;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /*background-color: var(--inverted-accent-color);*/
+}
+
+
+
+
+
+.project-page>.branding>*:first-child {
+    height: 100%;
+    flex: 1;
+    background-color: red;
+}
+
+.project-page>.branding>*:last-child {
+    height: 100%;
+    flex: 1.6;
+}
+
+.project-page>.branding>* {
+    background-color: blue;
+    outline: 2px dashed white;
+}
+
+.project-page>.branding>*>img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+
+}
+.project-page .interface-description{
+    border-top: .24rem var(--accent-color-50) double;
+    width: 80%;
+
+}
+.project-page .mobile {
+    margin: 5rem 0;
+    padding: 0 12vw;
+    display: grid;
+    gap: 2.4rem;
+    grid-template: 100% / 1fr 8fr;
+    height: 80svh;
+    text-align: center;
+
+}
+
+.project-page .mobile>*,
+.project-page .desktop>* {
+    height: 100%;
+}
+
+
+
+.project-page .mobile .image-container img {
+    border-radius: .8rem;
+    outline: .16rem solid var(--accent-color);
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.project-page>.desktop {
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: 4fr 6fr;
+}
+
+.project-page>.desktop>* {
+    background-color: var(--accent-color);
+    width: 100%;
+}
+
+.project-page>.desktop .item-description,
+.project-page>.mobile .item-description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: left;
+}
+
+.project-page>.desktop .item-description>*:first-child,
+.project-page>.mobile .item-description>*:first-child {
+    margin-bottom: .4rem;
+
+}
+
+@media (max-width: 768px) {
+
+    .project-page .mobile {
+        height: 100svh;
+        grid-template: 64% 1fr / 1fr;
+        padding: 0 2vw;
+        gap: 0rem;
+
+    }
+
+    .project-page>.desktop .item-description,
+    .project-page>.mobile .item-description {
+        text-align: center;
+    }
+}
+
+.project-page .tools {
+    border-top: .24rem var(--accent-color-50) double ;
+    padding: 5rem 12vw;
+    width: 80%;
+}
+
+.project-page .tools h2 {
+    text-align: center;
+    margin-bottom: 1.20rem;
+}
+
+.project-page .tools-grid {
+    display: grid;
+    gap: 2.4rem;
+}
+
+.project-page .tools-grid>* {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: .8rem;
+}
+
+.project-page .tools-grid .tool-name {
+    font-weight: 600;
+    transition: .3s;
+
+}
+
+.project-page .tools-grid a.tool-name {
+    text-decoration: underline wavy .2rem var(--accent-color);
+}   
+
+.project-page .tools-grid a.tool-name:hover {
+    font-weight: 900;
+    text-decoration-color: white; 
+
+}
+
+.project-page .tools-grid>*>* {
+    width: 50%;
+}
+
+.project-page .tools-grid>*>*:first-child {
+    text-align: right;
+}
+
+.project-page .tools-grid img {
+    height: 5rem;
+}

@@ -14,7 +14,7 @@ const GrainOverlay = () => {
           pointerEvents: "none",
           zIndex: 9998,
           mixBlendMode: "multiply", // Darken effect
-          opacity: 0.4,
+          opacity: 0.2,
         }}
       >
         <svg
@@ -53,7 +53,7 @@ const GrainOverlay = () => {
           pointerEvents: "none",
           zIndex: 9999, 
           mixBlendMode: "color-dodge", // Lighten effect
-          opacity: .1,
+          opacity: 0.2,
         }}
       >
         <svg
