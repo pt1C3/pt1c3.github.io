@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[219],{219:(e,o,p)=>{e.exports=p.p+"static/media/photoshop.71e47e865a64ea675171.svg"}}]);

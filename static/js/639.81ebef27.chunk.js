@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[639],{639:(e,f,s)=>{e.exports=s.p+"static/media/figma.1bdf5fae588474fa067d.svg"}}]);
