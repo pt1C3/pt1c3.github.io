@@ -14,7 +14,7 @@ import LogoSVG from './images/Logo Symbol.svg';
 const Logo = () => {
   return (
     <div className='nav'>
-      <Link to="/home">
+      <Link to="/portfolio">
         <img src={LogoSVG} />
       </Link>
     </div>
@@ -31,10 +31,11 @@ function App() {
       <Cursor />
       {location.pathname !== '/portfolio' && !location.pathname.includes('/project/') && <Logo />}
       <Routes>
-        <Route exact path="/portfolio" element={<Home />} />
-        <Route exact path="/projects" element={<ProjectsList footerRef={footerRef} />} />
-        <Route exact path='/contact' element={<Content />} />
-        <Route exact path="/project/:projectID" element={<Project />} />
+        <Route path="/portfolio" element={<Home />} />
+        <Route path="/projects" element={<ProjectsList footerRef={footerRef} />} />
+        <Route path='/contact' element={<Content />} />
+        <Route path="/project/:projectID" element={<Project />} />
+        <Route path="*" element={<Navigate to="/portfolio" />} />
       </ Routes>
       <Footer ref={footerRef} />
 
