@@ -71,7 +71,7 @@ body {
   cursor: none!important;
   font-family: 'NeueRegrade';
   color: var(--white-color);
-  font-size: var(--font-size);
+  font-size: var(--regular-size);
   overflow-x: hidden;
   
 }
@@ -110,4 +110,7 @@ border-radius: 0!important;
 .wrapper {
   min-height: 100dvh;
   position: relative;
+}
+.font-bold{
+  font-weight: 700;
 }

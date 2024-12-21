@@ -1,9 +1,45 @@
 [
     {
         "id": 1,
-        "title": "Creativity Takes Courage",
-        "categories": ["Poster"],
-        "description": "A poster design featuring the message 'Creativity Takes Courage,' with a focus on typography."
+        "title": "Melotunes",
+        "categories": ["Branding", "UI/UX"],
+        "description": "Social-first music app that combines the power of music streaming with interactive sharing, allowing users to connect through songs, trends, and echos.",
+        "branding_description": "The Melotunes logo features a vibrant heart intertwined with a musical note, symbolizing the connection and emotion music brings to people. The color palette blends dynamic purples and reds, evoking energy, passion, and creativity, while the clean typography reflects a modern and approachable aesthetic. Together, the logo and colors convey the app's mission to merge music and community seamlessly.",
+        "interface_description": "The interface designs illustrate the seamless integration of music discovery and social interaction, emphasizing an intuitive and visually engaging user experience. Throughout the design process, the goal was to create clean, user-friendly layouts that balance aesthetics with functionality. Every detail, from the placement of interactive elements to the use of visual hierarchy, was carefully considered to enhance usability and engagement. The result is a dynamic experience that feels both familiar and innovative, showcasing the potential of social-driven music exploration.",
+        "mobile_project_images": [
+            {
+                "id": "1",
+                "title": "Player Screen: Share the Moment",
+                "paragraph": "The player screen combines sleek functionality with social interactivity, allowing users to enjoy their favorite songs while seamlessly sharing them with friends. With options to post directly to the Echo feed or send to individuals, the design prioritizes simplicity and ease of connection."
+            },
+            {
+                "id": "2",
+                "title": "Echo Screen: Express Through Music",
+                "paragraph": "The Echo screen transforms music sharing into a creative and interactive experience. Users can craft song-focused posts with captions, visuals, and reactions, creating a vibrant space for personal expression and discovery. This feature bridges the gap between storytelling and music, making every post uniquely meaningful."
+            },
+            {
+                "id": "3",
+                "title": "",
+                "paragraph": ""
+            }
+        ],
+        "tools": [
+            {
+                "name": "Adobe Illustrator",
+                "identifier": "illustrator",
+                "comment": ""
+            },
+            {
+                "name": "Adobe Photoshop",
+                "identifier": "photoshop",
+                "comment": ""
+            },
+            {
+                "name": "Figma",
+                "identifier": "figma",
+                "comment": ""
+            }
+        ]
     },
     {
         "id": 2,
@@ -12,46 +48,89 @@
         "description": "A project inspired by Van Gogh's 'Starry Night', using a color palette that captures the essence of the iconic painting."
     },
     {
-        "id": 3,
-        "title": "Weather Icons",
-        "categories": ["Other"],
-        "description": "A icon set designed for a weather application, featuring clean and intuitive weather symbols."
-    },
-    {
         "id": 4,
         "title": "GreenThreads",
-        "categories": ["Web", "Branding"],
+        "categories": ["Branding", "UI/UX"],
         "description": "GreenThreads is a fashion brand committed to eco-friendly materials and ethical labor practices, offering stylish clothing with a sustainable touch."
-    },
-    {
-        "id": 5,
-        "title": "No Title Yet",
-        "categories": ["Other"],
-        "description": "An informative infographic illustrating the benefits of quality sleep and its impact on overall health."
     },
     {
         "id": 6,
         "title": "Nexara",
         "categories": ["Branding"],
-        "description": "Comprehensive branding suite, including business card, letterhead, and social media graphics, tailored for a tech company."
-    },
-    {
-        "id": 7,
-        "title": "No Title Yet",
-        "categories": ["Other"],
-        "description": "A detailed magazine layout celebrating classic race cars, featuring high-quality images and engaging content."
-    },
-    {
-        "id": 8,
-        "title": "TaskFlow",
-        "categories": ["Mobile"],
-        "description": "UI design for TaskFlow, a mobile project management app that includes features for project overviews, task tracking, and team collaboration."
-    },
-    {
-        "id": 9,
-        "title": "PureGlow Naturals",
-        "categories": ["Other"],
-        "description": "A series of eye-catching social media posts for PureGlow Naturals, an organic skincare brand, highlighting their natural beauty products."
+        "description": "Comprehensive branding suite, including business card, letterhead, and social media graphics, tailored for a tech company.",
+        "branding_description": "Designed a cohesive visual identity for Nexara, including a modern logo, business cards, and social media graphics. The branding reflects the company's innovative spirit and tech-focused vision with clean, minimalist aesthetics and a bold color palette.",
+        "development_description": "Developed an interactive landing page using React.js and optimized it for SEO and accessibility. The development process included creating responsive designs, ensuring cross-browser compatibility, and integrating analytics for performance tracking.",
+        "mobile_project_images": [
+            {
+                "id": "1",
+                "title": "Logo Design",
+                "paragraph": "The final logo design captures the essence of a modern tech company, with a sleek and minimalist style."
+            },
+            {
+                "id": "2",
+                "title": "Business Card Mockup",
+                "paragraph": "A professional business card design that maintains consistency with the brand's colors and style."
+            },
+            {
+                "id": "3",
+                "title": "",
+                "paragraph": ""
+            },
+            {
+                "id": "4",
+                "title": "",
+                "paragraph": ""
+            }
+        ],
+        "desktop_project_images": [
+            {
+                "id": "1",
+                "title": "Logo Design",
+                "paragraph": "The final logo design captures the essence of a modern tech company, with a sleek and minimalist style."
+            },
+            {
+                "id": "2",
+                "title": "Business Card Mockup",
+                "paragraph": "A professional business card design that maintains consistency with the brand's colors and style."
+            },
+            {
+                "id": "3",
+                "title": "",
+                "paragraph": ""
+            },
+            {
+                "id": "4",
+                "title": "",
+                "paragraph": ""
+            }
+        ],
+        "tools": [
+            {
+                "name": "Adobe Illustrator",
+                "identifier": "adobe_illustrator",
+                "comment": "Used to create the logo and branding assets."
+            },
+            {
+                "name": "Photoshop",
+                "identifier": "photoshop",
+                "comment": ""
+            },
+            {
+                "name": "Figma",
+                "identifier": "figma",
+                "comment": "First time I tried it! Loved the collaboration features."
+            },
+            {
+                "name": "React.js",
+                "identifier": "react_js",
+                "comment": ""
+            },
+            {
+                "name": "Google Analytics",
+                "identifier": "google_analytics",
+                "comment": "Integrated to track user interactions on the landing page."
+            }
+        ]
     },
     {
         "id": 10,

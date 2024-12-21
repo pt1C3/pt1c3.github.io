@@ -1,6 +1,7 @@
 import './content.css';
 import GPT from '../Gpt.svg';
 
+
 export default function Content() {
     return (<div className="content">
         <section className="container dark">

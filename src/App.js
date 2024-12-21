@@ -5,35 +5,38 @@ import Content from './views/content';
 import ProjectsList from './views/projectsList';
 import Home from './views/home';
 import { Routes, Route, useLocation, Link } from 'react-router-dom'
-import Project10 from './views/projects/10';
-import { useEffect } from 'react';
+import Project from './views/project';
+import { useEffect, useRef } from 'react';
 import GrainOverlay from "./components/grain";
+import Footer from './components/footer';
+import LogoSVG from './images/Logo Symbol.svg';
 
 const Logo = () => {
   return (
-    <div className='logo'>
-      <Link to="/">RAFAEL SILVA</Link>
+    <div className='nav'>
+      <Link to="/">
+        <img src={LogoSVG} />
+      </Link>
     </div>
   )
 }
 function App() {
   const location = useLocation();
+  const footerRef = useRef(null);
 
   return (
     <div className="App" style={{ backgroundImage: `url(${bgImage})` }}
     >
-      <GrainOverlay />
+      {/*<GrainOverlay />*/}
       <Cursor />
-      {location.pathname !== '/' && ( // se não estiver na home, mostra o logo
-        <Logo />
-
-      )}
+      {location.pathname !== '/' && !location.pathname.startsWith('/project/') && <Logo />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<ProjectsList />} />
+        <Route path="/projects" element={<ProjectsList footerRef={footerRef} />} />
         <Route path='/contact' element={<Content />} />
-        <Route path="/project/10" element={<Project10 />} />
+        <Route path="/project/:projectID" element={<Project />} />
       </ Routes>
+      <Footer ref={footerRef} />
 
     </div>
   );
