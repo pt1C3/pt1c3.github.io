@@ -82,7 +82,7 @@ export default function Project() {
     return (
         <>
             <div className='nav project-nav'>
-                <Link to="/">
+                <Link to="/portfolio">
                     <img src={LogoSVG} alt="Logo" />
                 </Link>
                 <p>PAH</p>

@@ -4,7 +4,7 @@ import Cursor from './cursor';
 import Content from './views/content';
 import ProjectsList from './views/projectsList';
 import Home from './views/home';
-import { Routes, Route, useLocation, Link } from 'react-router-dom'
+import { Routes, Route, useLocation, Link, Navigate } from 'react-router-dom'
 import Project from './views/project';
 import { useEffect, useRef } from 'react';
 import GrainOverlay from "./components/grain";
@@ -14,7 +14,7 @@ import LogoSVG from './images/Logo Symbol.svg';
 const Logo = () => {
   return (
     <div className='nav'>
-      <Link to="/">
+      <Link to="/portfolio">
         <img src={LogoSVG} />
       </Link>
     </div>
@@ -29,12 +29,13 @@ function App() {
     >
       {/*<GrainOverlay />*/}
       <Cursor />
-      {location.pathname !== '/' && !location.pathname.startsWith('/project/') && <Logo />}
+      {!location.pathname.includes('/portfolio') && !location.pathname.includes('/project/') && <Logo />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Home />} />
         <Route path="/projects" element={<ProjectsList footerRef={footerRef} />} />
         <Route path='/contact' element={<Content />} />
         <Route path="/project/:projectID" element={<Project />} />
+        <Route path="*" element={<Navigate to="/portfolio" />} />
       </ Routes>
       <Footer ref={footerRef} />
 
