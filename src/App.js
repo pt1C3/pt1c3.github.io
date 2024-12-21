@@ -29,13 +29,12 @@ function App() {
     >
       {/*<GrainOverlay />*/}
       <Cursor />
-      {location.pathname !== '/home' && !location.pathname.includes('/project/') && <Logo />}
+      {location.pathname !== '/portfolio' && !location.pathname.includes('/project/') && <Logo />}
       <Routes>
-        <Route path="/*" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/projects" element={<ProjectsList footerRef={footerRef} />} />
-        <Route path='/contact' element={<Content />} />
-        <Route path="/project/:projectID" element={<Project />} />
+        <Route exact path="/portfolio" element={<Home />} />
+        <Route exact path="/projects" element={<ProjectsList footerRef={footerRef} />} />
+        <Route exact path='/contact' element={<Content />} />
+        <Route exact path="/project/:projectID" element={<Project />} />
       </ Routes>
       <Footer ref={footerRef} />
 
