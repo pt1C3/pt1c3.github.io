@@ -1,26 +1,37 @@
-.App{
+.App {
   background-color: var(--black-color);
   background-size: cover;
   background-attachment: fixed;
 }
 
 
-.App>.nav{
+.App>.nav {
   width: 100dvw;
   text-align: center;
   display: flex;
   justify-content: flex-start;
   position: fixed;
   top: 0;
-  left:0;
+  left: 0;
   z-index: 999;
   padding: clamp(1.6rem, 1.6vw, 8rem);
   mix-blend-mode: difference;
 }
 
+.App>.nav>.left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-
-
-.App>.nav>a>img{
+.App>.nav>a:first-child>img {
   width: clamp(2rem, 3.6vw, 8rem);
+}
+
+.App>.nav>a:first-child:hover {
+  transform: scale(1.1) rotateZ(-12deg);
+}
+
+.App>.nav6>a:last-child:hover {
+  transform: scale(1.1) rotateZ(12deg);
 }

@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import './projectsList.css';
-import { Tilt } from 'react-tilt';
+import Tilt from 'react-parallax-tilt';
 import { Helmet } from 'react-helmet';
 import projects from '../projects.json'; // Import the JSON data
 
+
+const categories = ["Branding", "UI/UX", "Other"];
+
 // Function to import and sort images from a directory
-const importAll = (r) => {
+const importAllThumbnails = (r) => {
   let images = {};
   r.keys().forEach((item) => {
     // Extract the base filename without the extension
@@ -27,7 +30,7 @@ const importAll = (r) => {
 };
 
 // Import images from the 'images' directory
-const thumbnails = importAll(require.context('../images/projects/thumbnails', false, /\.(png|jpe?g|svg)$/));
+const thumbnails = importAllThumbnails(require.context('../images/projects/thumbnails', false, /\.(png|jpe?g|svg|webp)$/));
 
 const BottomNav = ({ selectedCategories, onSelectCategory, footerRef }) => {
   useEffect(() => {
@@ -54,7 +57,6 @@ const BottomNav = ({ selectedCategories, onSelectCategory, footerRef }) => {
     };
   }, [footerRef]);
 
-  const categories = ["BRANDING", "UI/UX", "OTHER"];
   return (
     <div className="bottom-bar">
       {categories.map((category) => (
@@ -72,10 +74,18 @@ const BottomNav = ({ selectedCategories, onSelectCategory, footerRef }) => {
 };
 
 export default function ProjectsList({ footerRef }) {
+  // Check if its a touch device, where hover effects are not available
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  // Reference to the projects grid, so that we can observe the project cards, and show project info without hover
+  const projectsGridRef = useRef(null);
+
+  // Selected project category
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const projectsGridRef = useRef(null); 
-  
+
+  // State to track loaded images
+  const [loadedImages, setLoadedImages] = useState({});
+
+  // Handle project category selection
   const handleSelectCategory = (category) => {
     setSelectedCategories((prevCategories) =>
       prevCategories.includes(category)
@@ -84,7 +94,16 @@ export default function ProjectsList({ footerRef }) {
     );
   };
 
+  // Handle image load, so the images arent reloaded when changing categories
+  const handleImageLoad = (id) => {
+    setLoadedImages((prevLoadedImages) => ({
+      ...prevLoadedImages,
+      [id]: true,
+    }));
+  };
+
   useEffect(() => {
+    // Add touch-device class to the body if it's a touch device
     const handleResize = () => {
       // Detect if the device is a touch device
       const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -92,13 +111,8 @@ export default function ProjectsList({ footerRef }) {
       // Add or remove the 'touch-device' class to the body
       document.body.classList.toggle('touch-device', touchDevice);
     };
-
     handleResize();
-    window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
   }, []);
 
   useEffect(() => {
@@ -137,22 +151,17 @@ export default function ProjectsList({ footerRef }) {
     return arr.join(' & ');
   }
 
-  //Hover tilt animation
-  const defaultOptions = {
-    reverse: true,  // reverse the tilt direction
-    max: 16,     // max tilt rotation (degrees)
-    perspective: 1600,   // Transform perspective, the lower the more extreme the tilt gets.
-    scale: 1,    // 2 = 200%, 1.5 = 150%, etc..
-    speed: 1000,   // Speed of the enter/exit transition
-    transition: true,   // Set a transition on enter/exit.
-    axis: null,   // What axis should be disabled. Can be X or Y.
-    reset: true,    // If the tilt effect has to be reset on exit.
-    easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
-  }
+
+
+  const filteredProjects = selectedCategories.length === 0
+    ? projects
+    : projects.filter((project) =>
+      selectedCategories.every((category) => project.categories.includes(category))
+    );
 
   return (
     <>
-    <Helmet> <title>Projects - 1C3 | Rafael Silva</title></Helmet>
+      <Helmet> <title>Projects - 1C3 | Rafael Silva</title></Helmet>
       <div className="wrapper projects-list">
         <header className='header'>
           <h1 className='title'>Projects</h1>
@@ -161,11 +170,26 @@ export default function ProjectsList({ footerRef }) {
         <section className='grid-container'>
           <div className='projects-grid' ref={projectsGridRef}>
             {
-              projects.map((item) => (
+              filteredProjects.map((item) => (
                 thumbnails[item.id] && ( // If it has thumbnail image
-                  <Tilt options={defaultOptions} key={item.id}>
+                  <Tilt
+                  tiltReverse={true}
+                  tiltMaxAngleX={12}
+                  tiltMaxAngleY={12}
+                  perspective={1600}
+                  transitionSpeed={1600}
+                  gyroscope={true}
+                  glareEnable={false}
+                  easing="cubic-bezier(.03,.98,.52,.99)"
+                    key={item.id}>
                     <Link to={"/project/" + item.id} className='project-card'>
-                      <img src={thumbnails[item.id]} alt={item.title} lazy/>
+                      <img
+                        src={thumbnails[item.id]}
+                        alt={item.title}
+                        onLoad={() => handleImageLoad(item.id)} // Handle image load
+                        style={{ display: loadedImages[item.id] ? 'block' : 'none' }} // Show image only when loaded
+                      />
+                      {!loadedImages[item.id] && <div className="image-placeholder">Loading...</div>}
                       <div className='info'>
                         <h2 className='title'>{item.title}</h2>
                         <h4 className='category'>{categoriesToString(item.categories)}</h4>
