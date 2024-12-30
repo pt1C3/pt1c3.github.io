@@ -29,20 +29,23 @@
 
 @media (max-width: 560px) {
     .projects-list .header {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
+        /* Stack items vertically */
         justify-content: flex-end;
         align-items: center;
     }
 
     .projects-list .header>.title,
     .projects-list .header>.subtitle {
-        width: 100%; /* Ensure both elements take full width */
+        width: 100%;
+        /* Ensure both elements take full width */
         height: fit-content;
         text-align: center;
     }
 
     .projects-list .header>.subtitle {
-        margin-top: 0.5rem; /* Add a small gap between title and subtitle */
+        margin-top: 0.5rem;
+        /* Add a small gap between title and subtitle */
         flex: none;
     }
 }
@@ -88,6 +91,8 @@
     width: 100%;
     z-index: 2;
     aspect-ratio: 1;
+    background-color: var(--black-color);
+
 }
 
 .projects-list .project-card>.info {
@@ -103,6 +108,7 @@
     height: 100%;
     width: 100%;
     transition: .24s;
+
 }
 
 .projects-list .project-card>img {
@@ -123,63 +129,70 @@
     width: 90%;
 }
 
-/* Hover and focus styles for desktop */
-.projects-list .project-card:hover,
-body.touch-device .projects-list .project-card.show-info {
-    border: var(--accent-color) .16rem solid;
+/**
+ * Define a custom property for the background angle.
+ */
+@property --bg-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
 }
 
-.projects-list .project-card:hover>.info,
+/**
+   * Keyframes for spinning the gradient.
+   */
+@keyframes spin {
+    to {
+        --bg-angle: 360deg;
+    }
+}
+
+
+/* Hover and focus styles for desktop */
+body:not(.touch-device) .projects-list .project-card:hover,
+body.touch-device .projects-list .project-card.show-info {
+    border: .16rem solid transparent;
+    border-image: conic-gradient(from var(--bg-angle), var(--third-color) 0%, var(--accent-color) 24%, var(--accent-color) 80%, var(--secondary-color) 100%) 1;
+    animation: spin 10s infinite linear;
+    background: transparent; /* Ensure background remains transparent */
+}
+
+body:not(.touch-device) .projects-list .project-card:hover>.info,
 body.touch-device .projects-list .project-card.show-info>.info {
     opacity: 1;
     z-index: 999;
 }
 
-.projects-list .project-card:hover>img,
+body:not(.touch-device) .projects-list .project-card:hover>img,
 body.touch-device .projects-list .project-card.show-info>img {
-    opacity: 0.08;
+    opacity: .08;
 }
 
 .bottom-bar {
-    background: linear-gradient(358deg, rgba(0,0,0,.48) 0%, rgba(0,0,0,0) 64%);    
-
     font-family: 'Emberly';
+    text-transform: uppercase;
     width: 100dvw;
-    color: #DDDDDD;
+    color: var(--white-color);
     display: flex;
     flex-direction: row;
     padding: 2.4rem clamp(1.6rem, 1.6vw, 8rem);
     justify-content: flex-end;
-    gap:2rem;
-    position: fixed;
+    gap: 2rem;
+    position: sticky;
     z-index: 999;
+    mix-blend-mode: difference;
 }
 
-@media (max-width: 960px) {
+
+
+@media (max-width: 768px) {
     .projects-list .bottom-bar {
-        padding: 0 10dvw;
+        justify-content: space-around;
+
     }
 }
 
-@media (max-width: 700px) {
-    .projects-list .bottom-bar {
-        padding: 0;
-    }
-}
-
-@keyframes click-animation {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
- .bottom-bar a {
+.bottom-bar a {
     font-size: 1.5rem;
     transition: .24s;
     font-weight: 500;
@@ -188,9 +201,11 @@ body.touch-device .projects-list .project-card.show-info>img {
     text-align: center;
     letter-spacing: .1rem;
     mix-blend-mode: difference;
+    text-decoration: none;
+
 }
 
- .bottom-bar a:hover {
+body:not(.touch-device) .bottom-bar a:hover {
     font-weight: 800;
     letter-spacing: .12rem;
 }
@@ -198,6 +213,6 @@ body.touch-device .projects-list .project-card.show-info>img {
 .bottom-bar .selected {
     font-weight: 900 !important;
     letter-spacing: .18rem !important;
-    color: #FFFFFF;
+    color: var(--white-color);
 
 }

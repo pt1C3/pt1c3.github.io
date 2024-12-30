@@ -2,9 +2,13 @@
     {
         "id": 1,
         "title": "Melotunes",
-        "categories": ["Branding", "UI/UX"],
+        "categories": [
+            "Branding",
+            "UI/UX"
+        ],
         "description": "Social-first music app that combines the power of music streaming with interactive sharing, allowing users to connect through songs, trends, and echos.",
         "branding_description": "The Melotunes logo features a vibrant heart intertwined with a musical note, symbolizing the connection and emotion music brings to people. The color palette blends dynamic purples and reds, evoking energy, passion, and creativity, while the clean typography reflects a modern and approachable aesthetic. Together, the logo and colors convey the app's mission to merge music and community seamlessly.",
+        "branding_amount": 2,
         "interface_description": "The interface designs illustrate the seamless integration of music discovery and social interaction, emphasizing an intuitive and visually engaging user experience. Throughout the design process, the goal was to create clean, user-friendly layouts that balance aesthetics with functionality. Every detail, from the placement of interactive elements to the use of visual hierarchy, was carefully considered to enhance usability and engagement. The result is a dynamic experience that feels both familiar and innovative, showcasing the potential of social-driven music exploration.",
         "mobile_project_images": [
             {
@@ -37,105 +41,204 @@
             {
                 "name": "Figma",
                 "identifier": "figma",
+                "figma_link": "https://www.figma.com/community/file/1453379000465017212/melotunes",
                 "comment": ""
+            },
+            {
+                "name": "ChatGPT",
+                "identifier": "chatgpt",
+                "comment": "Gave the topic idea!"
             }
         ]
     },
     {
         "id": 2,
-        "title": "Starry Night",
-        "categories": ["Other"],
-        "description": "A project inspired by Van Gogh's 'Starry Night', using a color palette that captures the essence of the iconic painting."
-    },
-    {
-        "id": 4,
         "title": "GreenThreads",
-        "categories": ["Branding", "UI/UX"],
-        "description": "GreenThreads is a fashion brand committed to eco-friendly materials and ethical labor practices, offering stylish clothing with a sustainable touch."
-    },
-    {
-        "id": 6,
-        "title": "Nexara",
-        "categories": ["Branding"],
-        "description": "Comprehensive branding suite, including business card, letterhead, and social media graphics, tailored for a tech company.",
-        "branding_description": "Designed a cohesive visual identity for Nexara, including a modern logo, business cards, and social media graphics. The branding reflects the company's innovative spirit and tech-focused vision with clean, minimalist aesthetics and a bold color palette.",
-        "development_description": "Developed an interactive landing page using React.js and optimized it for SEO and accessibility. The development process included creating responsive designs, ensuring cross-browser compatibility, and integrating analytics for performance tracking.",
-        "mobile_project_images": [
-            {
-                "id": "1",
-                "title": "Logo Design",
-                "paragraph": "The final logo design captures the essence of a modern tech company, with a sleek and minimalist style."
-            },
-            {
-                "id": "2",
-                "title": "Business Card Mockup",
-                "paragraph": "A professional business card design that maintains consistency with the brand's colors and style."
-            },
-            {
-                "id": "3",
-                "title": "",
-                "paragraph": ""
-            },
-            {
-                "id": "4",
-                "title": "",
-                "paragraph": ""
-            }
+        "categories": [
+            "Branding",
+            "UI/UX"
         ],
+        "description": "GreenThreads is a fashion brand committed to eco-friendly materials and ethical labor practices, offering stylish clothing with a sustainable touch.",
+        "branding_amount": 3,
+        "branding_description": "The branding reflects an elegant and eco-conscious identity, capturing the essence of sustainability and modernity. The logo features a clean and organic design, perfectly aligning with the brand’s ethos of ethical fashion. The warm, natural color palette of soft beige and earthy green evokes harmony with nature while maintaining a polished aesthetic. The use of minimalistic serif typography adds a sense of sophistication and trust, balancing style and readability. Every visual element is thoughtfully designed to communicate the brand’s commitment to sustainable materials and ethical practices while keeping the overall design clean and inviting.",
+        "development_description": "The user interface ensures a seamless and intuitive browsing experience, with a focus on simplicity and accessibility. The layout is clean and well-organized, with clear navigation to guide users through categories such as Women, Men, and Children. Interactive elements, like hover effects and dynamic product displays, subtly enhance engagement without overwhelming the user. Transparent pricing and intuitive call-to-action buttons ensure clarity and usability throughout the journey. The checkout flow is streamlined, offering a hassle-free experience that aligns with the modern expectations of online shoppers.",
         "desktop_project_images": [
             {
                 "id": "1",
-                "title": "Logo Design",
-                "paragraph": "The final logo design captures the essence of a modern tech company, with a sleek and minimalist style."
+                "title": "Inviting Homepage",
+                "paragraph": "The homepage welcomes users with a full-width hero banner featuring nature-inspired imagery and a tagline emphasizing sustainability. Featured products are displayed in a carousel below, with pricing and discounts clearly presented. The layout strikes a balance between elegance and functionality, encouraging exploration."
             },
             {
                 "id": "2",
-                "title": "Business Card Mockup",
-                "paragraph": "A professional business card design that maintains consistency with the brand's colors and style."
+                "title": "Showcase Product Page",
+                "paragraph": "The product page highlights the item with a large, high-quality image complemented by essential details like size, color options, and pricing. The layout is clean, with an intuitive design that makes it easy for users to select options and add items to their bag."
             },
             {
                 "id": "3",
-                "title": "",
-                "paragraph": ""
-            },
-            {
-                "id": "4",
-                "title": "",
-                "paragraph": ""
+                "title": "Organized Cart Page",
+                "paragraph": "The cart page presents a concise overview of selected items, with clear details on pricing, sizes, and quantities. The inclusion of a coupon code field encourages engagement, while the estimated total and \"Proceed to Checkout\" button are designed for transparency and ease of use."
             }
         ],
         "tools": [
             {
                 "name": "Adobe Illustrator",
-                "identifier": "adobe_illustrator",
-                "comment": "Used to create the logo and branding assets."
+                "identifier": "illustrator",
+                "comment": ""
             },
             {
-                "name": "Photoshop",
+                "name": "Adobe Photoshop",
                 "identifier": "photoshop",
                 "comment": ""
             },
             {
                 "name": "Figma",
                 "identifier": "figma",
-                "comment": "First time I tried it! Loved the collaboration features."
-            },
-            {
-                "name": "React.js",
-                "identifier": "react_js",
+                "figma_link": "https://www.figma.com/community/file/1453377750553013626/greenthreads",
                 "comment": ""
             },
             {
-                "name": "Google Analytics",
-                "identifier": "google_analytics",
-                "comment": "Integrated to track user interactions on the landing page."
+                "name": "ChatGPT",
+                "identifier": "chatgpt",
+                "comment": "Gave the topic idea!"
             }
         ]
     },
     {
-        "id": 10,
+        "id": 3,
+        "title": "Nexara",
+        "categories": [
+            "Branding"
+        ],
+        "description": "Comprehensive branding suite, including business card, letterhead, and social media graphics, tailored for a tech company.",
+        "branding_amount": 3,
+        "branding_description": "Designed a cohesive visual identity for Nexara, including a modern logo, business cards, and social media graphics. The branding reflects the company's innovative spirit and tech-focused vision with clean, minimalist aesthetics and a bold color palette.",
+        "tools": [
+            {
+                "name": "Adobe Illustrator",
+                "identifier": "illustrator",
+                "comment": ""
+            },
+            {
+                "name": "Adobe Photoshop",
+                "identifier": "photoshop",
+                "comment": ""
+            },
+            {
+                "name": "ChatGPT",
+                "identifier": "chatgpt",
+                "comment": "Gave the topic idea!"
+            }
+        ]
+    },
+    {
+        "id": 4,
         "title": "Echos of the Future",
-        "categories": ["Other"],
-        "description": "Album cover design for 'Echos of the Future', a synthwave album that blends retro and futuristic elements."
+        "categories": [
+            "Other"
+        ],
+        "description": "Album cover design for 'Echos of the Future', a synthwave album that blends retro and futuristic elements.",
+        "branding_description": "The design blends retro and futuristic aesthetics with a vivid purple vortex of glowing orbs, creating a sense of motion and depth. The neon color palette and soft gradients evoke a dreamlike synthwave tone, while the glowing white-pink serif typography balances nostalgia with a modern edge, perfectly capturing the theme.",
+        "tools": [
+            {
+                "name": "Adobe Illustrator",
+                "identifier": "illustrator",
+                "comment": ""
+            },
+            {
+                "name": "Adobe Photoshop",
+                "identifier": "photoshop",
+                "comment": ""
+            },
+            {
+                "name": "ChatGPT",
+                "identifier": "chatgpt",
+                "comment": "Gave the topic idea!"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Stico",
+        "categories": [
+            "UI/UX"
+        ],
+        "description": "A website that helps users learn more about the types of plastic and how to discover their types.",
+        "branding_description": "As my first completed project in Figma, the branding emphasizes clarity and education through a professional design approach. The logo cleverly incorporates the silhouette of a water bottle with a distinctive dot accent, symbolizing both the experimental nature of plastic identification and the common everyday plastic items we encounter. This design choice is particularly relevant as water bottles are one of the most recognizable PET plastic products. The color palette primarily utilizes varying shades of blue, creating a sense of trust and reliability while maintaining visual hierarchy. The minimalist design language ensures that educational content remains the focal point, while still maintaining an engaging and modern aesthetic that appeals to both casual users and industry professionals.",
+        "development_description": "The user interface is structured to guide users through a systematic learning experience about plastic identification. The navigation is clear and intuitive, with main sections for Recycling, Origin, and Identification clearly visible in the header. The layout presents information in a progressive disclosure pattern, starting with an overview of plastic types and their symbols, followed by detailed experimental procedures. Interactive elements like density test results are presented with clear visual feedback through 'Afunda' (Sinks) and 'Flutua' (Floats) buttons. The design maintains consistency across all pages with a clean, grid-based layout that ensures optimal readability and engagement.",
+        "desktop_project_images": [
+            {
+                "id": "1",
+                "title": "Types of Plastic Overview",
+                "paragraph": "The landing page introduces users to different plastic types through clear iconography and detailed information about PET (Polyethylene Terephthalate). The layout features a clean design with product examples and density specifications, making it easy for users to understand practical applications."
+            },
+            {
+                "id": "2",
+                "title": "Solution Preparation Guide",
+                "paragraph": "A step-by-step guide for preparing test solutions, featuring precise measurements and clear visual representations of containers and tools. The interface includes detailed specifications for distilled water and various chemical solutions, ensuring accurate experiment execution."
+            },
+            {
+                "id": "3",
+                "title": "Density Test Interface",
+                "paragraph": "An interactive interface showing different solution densities with their respective compositions, featuring a clear layout with locked and unlocked states. Each solution is numbered and includes detailed density measurements, helping users track their progress through the identification process."
+            },
+            {
+                "id": "4",
+                "title": "Identification Results",
+                "paragraph": "The results page presents comprehensive information about plastic types, including PVC and PET, with their respective density values and common applications. The layout includes interactive elements for confirming test results and detailed explanations about each material's properties and environmental impact."
+            }
+        ],
+        "tools": [
+            {
+                "name": "Figma",
+                "identifier": "figma",
+                "figma_link": "https://www.figma.com/community/file/1453381096943458688/stico",
+                "comment": "First project using it!"
+            },
+            {
+                "name": "Adobe Illustrator",
+                "identifier": "illustrator",
+                "comment": ""
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "LogicLeap",
+        "categories": [
+            "UI/UX"
+        ],
+        "description": "A web platform for companies to buy and distribute software licenses, manage subscriptions, addons and users.",
+        "branding_description": "The branding combines professionalism with modern tech aesthetics. The logo features a distinctive orange square with a white cutout, suggesting forward movement and logical progression. The color scheme balances corporate blues with vibrant orange accents, creating a trustworthy yet innovative feel. Product logos follow a consistent system using two-letter abbreviations (CV, TM, CS) on solid-colored backgrounds, ensuring clear differentiation while maintaining brand cohesion.",
+        "development_description": "The interface employs a clean, hierarchical layout with intuitive navigation through breadcrumbs and tabbed sections. The homepage showcases popular products with clear pricing and promotional badges, while product pages provide detailed information through organized tabs (Features, Release Notes, Plans, Requirements, FAQ). The pricing structure is transparent, with clear user limits and annual renewal terms. Interactive elements use consistent blue CTAs for primary actions.",
+        "desktop_project_images": [
+            {
+                "id": "1",
+                "title": "Homepage",
+                "paragraph": "Showcases featured products with a hero section for CreatiVortex, followed by a Popular section displaying product cards with pricing, discounts, and categories. The Design Tools section below presents detailed product offerings with descriptions and promotional pricing."
+            },
+            {
+                "id": "2",
+                "title": "Product Overview",
+                "paragraph": "Detailed product page featuring the CreatiVortex brand identity, product description, and preview image. The navigation includes breadcrumbs and tabbed sections for organized content access."
+            },
+            {
+                "id": "3",
+                "title": "License Managing",
+                "paragraph": "Intuitive page for managing licenses for each owned software to each company manager."
+            }
+        ],
+        "tools": [
+            {
+                "name": "Figma",
+                "identifier": "figma",
+                "figma_link": "https://www.figma.com/community/file/1453380357889640831/logicleap",
+                "comment": ""
+            },
+            {
+                "name": "Adobe Illustrator",
+                "identifier": "illustrator",
+                "comment": ""
+            }
+        ]
     }
 ]

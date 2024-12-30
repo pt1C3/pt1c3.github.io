@@ -1,8 +1,9 @@
-.project-page{
+.project-page {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .project-page>* {
     padding: 5rem 4vw;
 }
@@ -12,6 +13,46 @@
 
 }
 
+.projects-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.nav .left a:last-child,
+.projects-nav a {
+    display: flex;
+    flex-direction: row;
+    gap: .8rem;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform .3s;
+
+}
+
+.projects-nav a:first-child:hover {
+    transform: skewY(4deg) rotateY(24deg);
+
+}
+.projects-nav a:nth-child(2):hover {
+    transform: scale(1.4);
+
+}
+.projects-nav a:last-child:hover {
+    transform: skewY(-4deg) rotateY(-24deg);
+
+}
+
+.projects-nav a:first-child img {
+    transform: scaleX(-1);
+}
+
+.left a:last-child img,
+.projects-nav img {
+    height: clamp(2rem, 3svh, 8rem);
+}
 
 .project-page>*:first-child {
     padding-top: 8rem;
@@ -24,12 +65,15 @@
 
 .project-page>*:first-child>* {
     height: 100%;
-    vertical-align: middle;
     width: 100%;
+
 }
 
-.project-page>*:first-child .logo {
-    width: 100%;
+
+
+.project-page>*:first-child .branding-description {
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -38,49 +82,178 @@
     .project-page>.tools>.tools-grid {
         grid-template-columns: 1fr !important;
     }
+
+    .project-page>*:first-child .branding-description {
+        text-align: center;
+    }
 }
 
 .project-page>.branding {
     display: flex;
-    flex-wrap: wrap;
-    padding: 5rem 4vw;
+    flex-direction: row;
     width: 100%;
+    height: 100svh;
     justify-content: center;
-    align-items: center;
-    /*background-color: var(--inverted-accent-color);*/
+    position: relative;
 }
 
-
-
-
-
-.project-page>.branding>*:first-child {
+.project-page>.branding .left,
+.project-page>.branding .right {
+    position: absolute;
     height: 100%;
-    flex: 1;
-    background-color: red;
+    border: none;
+    width: 24%;
+    padding: 2rem;
+    transition: .24s;
 }
 
-.project-page>.branding>*:last-child {
+.project-page>.branding .left {
+    left: 0;
+    top: 0;
+    text-align: right;
+    transform: translateX(-100%);
+
+    background: radial-gradient(circle farthest-side at right center, rgb(from var(--black-color) r g b / .36) 0%, transparent 36%);
+}
+
+.project-page>.branding .right {
+    right: 0;
+    top: 0;
+    text-align: left;
+    transform: translateX(100%);
+    background: radial-gradient(circle farthest-side at left center, rgb(from var(--black-color) r g b / .36) 0%, transparent 36%);
+
+}
+
+
+.project-page>.branding .left>img {
+    transform: rotateY(180deg);
+}
+
+.project-page>.branding .left>img,
+.project-page>.branding .right>img {
+    width: 36%;
+    opacity: .48;
+    transition: .24s;
+}
+
+.project-page>.branding .left:hover {
+    background: radial-gradient(circle farthest-side at right center, rgb(from var(--accent-color) r g b / .48) 0%, transparent 48%);
+
+}
+
+.project-page>.branding .right:hover {
+    background: radial-gradient(circle farthest-side at left center, rgb(from var(--accent-color) r g b / .48) 0%, transparent 48%);
+}
+
+
+.project-page>.branding .left:hover>img,
+.project-page>.branding .right:hover>img {
+    opacity: 1;
+    width: 64%;
+}
+
+@media (max-width: 868px) {
+
+    .project-page>.branding .left,
+    .project-page>.branding .right {
+        padding: 1rem;
+        width: 24%;
+    }
+
+    .project-page>.branding .left>img,
+    .project-page>.branding .right>img {
+        width: 4vw;
+        opacity: .48;
+    }
+
+
+    .project-page>.branding .left:hover {
+        background: radial-gradient(circle farthest-side at right center, rgb(from var(--accent-color) r g b / .48) 0%, transparent 64%);
+
+    }
+
+
+    .project-page>.branding .right:hover {
+        background: radial-gradient(circle farthest-side at left center, rgb(from var(--accent-color) r g b / .48) 0%, transparent 64%);
+    }
+
+    .project-page>.branding .left:hover>img,
+    .project-page>.branding .right:hover>img {
+        width: 6vw;
+    }
+}
+
+.project-page>.branding .branding-image {
     height: 100%;
-    flex: 1.6;
-}
-
-.project-page>.branding>* {
-    background-color: blue;
-    outline: 2px dashed white;
-}
-
-.project-page>.branding>*>img {
     object-fit: contain;
-    height: 100%;
-    width: 100%;
 
 }
-.project-page .interface-description{
+
+@media (max-width: 868px) {
+    .project-page>.branding {
+        height: fit-content;
+    }
+
+    .project-page>.branding .branding-image {
+        height: auto;
+        object-fit: contain;
+        width: 64vw;
+    }
+}
+
+.project-page>.branding .branding-indicators {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 0.64rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 868px) {
+    .project-page>.branding .branding-indicators {
+        bottom: 10%;
+
+    }
+}
+
+.project-page>.branding .branding-indicators .indicator {
+    transform: rotate(45deg);
+    width: .36rem;
+    height: .36rem;
+    background-color: var(--accent-color);
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.project-page>.branding .branding-indicators .indicator.active {
+    opacity: 1;
+}
+
+.project-page>.other img {
+    object-fit: contain;
+    height: 80svh;
+    border: .16rem solid var(--accent-color);
+
+}
+
+@media (max-width: 768px) {
+    .project-page>.other img {
+        height: auto;
+        width: 80vw
+    }
+}
+
+.project-page .interface-description {
     border-top: .24rem var(--accent-color-50) double;
     width: 80%;
 
+
 }
+
 .project-page .mobile {
     margin: 5rem 0;
     padding: 0 12vw;
@@ -92,20 +265,23 @@
 
 }
 
-.project-page .mobile>*,
-.project-page .desktop>* {
-    height: 100%;
+
+.project-page .desktop {
+    display: flex;
+    align-items: Center;
 }
-
-
 
 .project-page .mobile .image-container img {
     border-radius: .8rem;
-    outline: .16rem solid var(--accent-color);
+    border: .16rem solid var(--accent-color);
     height: 100%;
     object-fit: contain;
 }
 
+.project-page .desktop img {
+    border-radius: .8rem;
+    border: .16rem solid var(--accent-color);
+}
 
 .project-page>.desktop {
     display: grid;
@@ -114,7 +290,6 @@
 }
 
 .project-page>.desktop>* {
-    background-color: var(--accent-color);
     width: 100%;
 }
 
@@ -150,7 +325,7 @@
 }
 
 .project-page .tools {
-    border-top: .24rem var(--accent-color-50) double ;
+    border-top: .24rem var(--accent-color-50) double;
     padding: 5rem 12vw;
     width: 80%;
 }
@@ -172,6 +347,7 @@
     justify-content: center;
     gap: 1.6rem;
     padding: .8rem;
+    position: relative;
 }
 
 .project-page .tools-grid .tool-name {
@@ -180,13 +356,8 @@
 
 }
 
-.project-page .tools-grid a.tool-name {
-    text-decoration: underline wavy .2rem var(--accent-color);
-}   
-
 .project-page .tools-grid a.tool-name:hover {
     font-weight: 900;
-    text-decoration-color: white; 
 
 }
 
@@ -200,4 +371,56 @@
 
 .project-page .tools-grid img {
     height: 5rem;
+}
+
+.project-page .tools-grid .comment {
+    padding: .4rem;
+    background-color: var(--accent-color);
+    width: fit-content;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    perspective: 1000px;
+    display: block;
+    transform-style: preserve-3d;
+    white-space: nowrap;
+    transform: translate(32%, 12%) rotateX(12deg) skew(-2deg) rotateY(-24deg);
+    transition: .3s;
+}
+
+.project-page .tools-grid .comment:hover {
+    transform: translate(32%, 12%) rotateX(12deg) skew(-4deg) rotateY(-36deg);
+}
+
+
+
+/**
+ * Define a custom property for the background angle.
+ */
+@property --bg-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+}
+
+/**
+ * Keyframes for spinning the gradient.
+ */
+@keyframes spin {
+    to {
+        --bg-angle: 360deg;
+    }
+}
+
+.project-page>.branding .branding-image,
+.project-page .mobile .image-container img,
+.project-page .desktop img,
+.project-page>.other img {
+    border-radius: .8rem;
+    border: .16rem solid transparent;
+    position: relative;
+    background:
+        linear-gradient(to bottom, transparent, transparent) padding-box,
+        conic-gradient(from var(--bg-angle), var(--third-color) 0%, var(--accent-color) 24%, var(--accent-color) 80%, var(--secondary-color) 100%) border-box;
+    animation: spin 10s infinite linear;
 }

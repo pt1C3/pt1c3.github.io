@@ -15,18 +15,19 @@
 }
 
 :root {
-  --white-color: #fafafa;
+  --white-color: #ffffff;
   --black-color: #050505;
   --accent-color: #6600ff;
-  --light-accent-color: #CBB1FF;
+  --secondary-color: #C833FF;
+  --third-color: #0080ff;
+  --light-accent-color: #8142ff;
   --accent-color-50: #6600ff80;
   --inverted-accent-color: #99ff00;
-  --inverted-accent-color-transp: #99ff00aa;
+  --inverted-accent-color-transp: #99ff0080;
   --regular-size: 1.2rem;
   --header-1-size: 4rem;
   --header-2-size: 3rem;
   --header-3-size: 2rem;
-  --gradient: linear-gradient(45deg, #7333ff, #be33ff);
   color-scheme: dark;
   accent-color: var(--accent-color);
 }
@@ -63,9 +64,13 @@ h3 {
 }
 
 a{
-  text-decoration: none;
+  text-decoration: underline wavy var(--accent-color) .1rem;
   color: inherit;
-  font-weight: 100;
+  transition: .3s;
+
+}
+a:hover{
+  text-decoration-color: var(--white-color); 
 }
 body {
   cursor: none!important;
@@ -73,14 +78,15 @@ body {
   color: var(--white-color);
   font-size: var(--regular-size);
   overflow-x: hidden;
-  
 }
 
-
+.text-center {
+  text-align: center;
+}
 
 ::selection {
-  background: var(--inverted-accent-color-transp);
-  color: var(--white-color);
+  background: var(--inverted-accent-color );
+  color: var(--black-color);
 }
 
 
@@ -91,12 +97,12 @@ body {
 
 
 ::-webkit-scrollbar-track{
-  background: #050505!important;
+  background: var(--black-color)!important;
 
 }
 
 ::-webkit-scrollbar-thumb{
-  background: #FAFAFA!important;
+  background: var(--white-color)!important;
   opacity:1!important;
 border-radius: 0!important;
  
