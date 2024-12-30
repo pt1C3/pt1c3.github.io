@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_1c3_portfolio=self.webpackChunk_1c3_portfolio||[]).push([[667],{667:(e,s,o)=>{e.exports=o.p+"static/media/email.393b073de40952d74b72.svg"}}]);
