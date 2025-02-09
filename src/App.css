@@ -15,6 +15,7 @@
   left: 0;
   z-index: 999;
   padding: clamp(1.6rem, 1.6vw, 8rem);
+  padding-bottom:0;
   mix-blend-mode: difference;
 }
 
@@ -32,6 +33,6 @@
   transform: scale(1.1) rotateZ(-12deg);
 }
 
-.App>.nav6>a:last-child:hover {
+.App>.nav>a:last-child:hover {
   transform: scale(1.1) rotateZ(12deg);
 }

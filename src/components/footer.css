@@ -3,6 +3,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   border-top: .16rem solid var(--accent-color);
+  background-color: var(--gray-1-color);
 }
 
 footer>* {

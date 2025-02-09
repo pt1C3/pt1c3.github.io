@@ -2,7 +2,6 @@
   font-family: 'Emberly';
   src: url('./fonts/Emberly.ttf') format('truetype');
   font-weight: 100 900;
-  font-stretch: 50% 200%;
   font-display: swap;
 }
 
@@ -16,7 +15,9 @@
 
 :root {
   --white-color: #ffffff;
-  --black-color: #050505;
+  --gray-5-color: #808080;
+  --black-color: #0d0d0d;
+  --gray-1-color: #121212;
   --accent-color: #6600ff;
   --secondary-color: #C833FF;
   --third-color: #0080ff;
@@ -36,7 +37,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  cursor: none!important;
+  cursor: none !important;
+  text-wrap: pretty;
+
 }
 
 h1,
@@ -63,17 +66,19 @@ h3 {
 
 }
 
-a{
+a {
   text-decoration: underline wavy var(--accent-color) .1rem;
   color: inherit;
   transition: .3s;
 
 }
-a:hover{
-  text-decoration-color: var(--white-color); 
+
+a:hover {
+  text-decoration-color: var(--white-color);
 }
+
 body {
-  cursor: none!important;
+  cursor: none !important;
   font-family: 'NeueRegrade';
   color: var(--white-color);
   font-size: var(--regular-size);
@@ -85,31 +90,31 @@ body {
 }
 
 ::selection {
-  background: var(--inverted-accent-color );
+  background: var(--inverted-accent-color);
   color: var(--black-color);
 }
 
 
-::-webkit-scrollbar{
-  width: .5rem!important;
+::-webkit-scrollbar {
+  width: .5rem !important;
   /* Width of the scrollbar */
 }
 
 
-::-webkit-scrollbar-track{
-  background: var(--black-color)!important;
+::-webkit-scrollbar-track {
+  background: var(--black-color) !important;
 
 }
 
-::-webkit-scrollbar-thumb{
-  background: var(--white-color)!important;
-  opacity:1!important;
-border-radius: 0!important;
- 
+::-webkit-scrollbar-thumb {
+  background: var(--white-color) !important;
+  opacity: 1 !important;
+  border-radius: 0 !important;
+
 }
 
-::-webkit-scrollbar-thumb:hover{
-  background: #7333FF!important;
+::-webkit-scrollbar-thumb:hover {
+  background: #7333FF !important;
   /* Color of the scrollbar thumb on hover */
 }
 
@@ -117,6 +122,7 @@ border-radius: 0!important;
   min-height: 100dvh;
   position: relative;
 }
-.font-bold{
+
+.font-bold {
   font-weight: 700;
 }
