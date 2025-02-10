@@ -8,7 +8,7 @@ import linkedin from '../images/contacts/linkedin.svg';
 import github from '../images/contacts/github.svg';
 import instagram from '../images/contacts/instagram.svg';
 import behance from '../images/contacts/behance.svg';
-
+import Loader from './loader';
 const Footer = React.forwardRef((props, ref) => {
   const projectID = 1;
   const [project, setProject] = useState(null);
@@ -94,7 +94,8 @@ const Footer = React.forwardRef((props, ref) => {
             projects
           </NavLink>
         </div>
-        {!project ? <p className='font-bold'>Loading...</p> : <>
+        {!project ? <p className='font-bold'>
+         <Loader /></p> : <>
           <p className='font-bold'>Featured Project</p>
           <Link to={"/project/" + projectID} className='featured-project'>
             <div className='featured-project-info'>
