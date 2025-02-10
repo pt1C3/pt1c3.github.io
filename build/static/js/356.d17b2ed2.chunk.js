@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_1c3_portfolio=self.webpackChunk_1c3_portfolio||[]).push([[356],{94356:(e,t,c)=>{e.exports=c.p+"static/media/Neue Regrade.b0bdec418445bf72d167.ttf"}}]);
