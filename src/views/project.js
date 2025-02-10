@@ -10,6 +10,7 @@ import Arrow from '../images/arrow.svg';
 import Menu from '../images/menu.svg';
 
 import Tilt from 'react-parallax-tilt';
+import Loader from '../components/loader';
 
 export default function Project() {
     const { projectID } = useParams();
@@ -135,7 +136,7 @@ export default function Project() {
     };
 
     if (!project) {
-        return <div className="text-center">Loading...</div>;
+        return <Loader />;
     }
 
     function changeProject(bool) {
@@ -159,11 +160,18 @@ export default function Project() {
         <>
             <Helmet><title>{project.title + " - 1C3"}</title> </Helmet>
             <div className='nav project-nav'>
-                    <Link to="/portfolio">
-                        <img src={Logo} alt="Logo" />
-                    </Link>
+                <Link to="/portfolio">
+                    <img src={Logo} alt="Logo" />
+                </Link>
 
-                    <div className='projects-nav'><Link to={'/project/' + changeProject(false)}><img src={Arrow} alt='Go to the previous project' /> Previous</Link> <Link to="/projects"><img src={Menu} alt='Go to projects' /></Link><Link to={'/project/' + changeProject(true)}>Next <img src={Arrow} alt='Go to the next project' /></Link></div>
+                <div className='projects-nav'>
+                    <Link to={'/project/' + changeProject(false)}>
+                        <img src={Arrow} alt='Go to the previous project' />
+                    </Link>
+                    <Link to="/projects"><img src={Menu} alt='Go to projects' /></Link><Link to={'/project/' + changeProject(true)}>
+                        <img src={Arrow} alt='Go to the next project' />
+                    </Link>
+                </div>
             </div>
             <div className='wrapper project-page'>
                 <div>
@@ -173,6 +181,7 @@ export default function Project() {
                 </div>
                 {project.categories?.includes('Branding') && <div className='branding'>
                     <Tilt
+                        tiltEnable={false}
                         tiltReverse={true}
                         tiltMaxAngleX={0}
                         tiltMaxAngleY={12}
@@ -187,15 +196,16 @@ export default function Project() {
                         <button className='left' onClick={handlePreviousBrandingImage}><img src={Arrow} alt='Check previous branding sample' /> </button>
                         <button className='right' onClick={handleNextBrandingImage}><img src={Arrow} alt='Check next branding sample' /> </button>
 
-                    </Tilt>
-                    <div className='branding-indicators'>
-                        {project.branding.map((_, index) => (
-                            <div
-                                key={index}
-                                className={`indicator ${index === currentBrandingIndex ? 'active' : ''}`}
-                            ></div>
-                        ))}
-                    </div>
+                        <span />
+                        <div className='branding-indicators'>
+                            {project.branding.map((_, index) => (
+                                <div
+                                    key={index}
+                                    className={`indicator ${index === currentBrandingIndex ? 'active' : ''}`}
+                                ></div>
+                            ))}
+                        </div>
+                        </Tilt>
                 </div>}
                 {project.categories?.includes('Other') && <div className='other'>
                     <img src={project.otherImage} alt={project.title} />

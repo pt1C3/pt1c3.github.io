@@ -1,47 +1,51 @@
+
+
 .wrapper.home section {
     width: 100vw;
 }
 
-.wrapper.home section:first-child {
+.wrapper.home section:nth-child(1) {
     padding: 0 clamp(1.6rem, 1.6vw, 8rem);
-    padding-top: 10dvh;
-    z-index: 1000;
-    position: relative
-}
-
-.wrapper.home section:first-child .first-details {
+    z-index: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 10dvh;
-    gap: 1rem;
-    height: 70dvh;
+    justify-content: center;
+    gap: calc(var(--regular-size) * 2);
+    height: 100svh;
 }
-
+.wrapper.home section:nth-child(1)>.waves{
+    border-bottom: 0.1rem solid var(--accent-color);
+}
+.wrapper.home section:nth-child(1)>*{
+    z-index: 2;
+}
 @media (max-width: 860px) {
-    .wrapper.home section:first-child .first-details {
+    .wrapper.home section:nth-child(1) {
         align-items: center;
     }
 
-    .wrapper.home section:first-child .first-details * {
+    .wrapper.home section:nth-child(1) * {
         text-align: center;
     }
 }
 
-.wrapper.home section:first-child .first-details .logo {
+.wrapper.home section:nth-child(1) .logo {
     width: clamp(8rem, 8vw, 30rem);
 }
 
-.wrapper.home section:first-child .first-details .title {
-    font-size: clamp(8rem, 12vw, 30rem);
+.wrapper.home section:nth-child(1) .title {
+    font-size: clamp(6.4rem, 8vw, 30rem);
     font-weight: 900;
     vertical-align: bottom;
-    line-height: .8;
     font-family: "Emberly";
     letter-spacing: .2rem;
+    margin-bottom: -2vw !important;
+
 }
 
-.wrapper.home section:first-child .first-details .subtitle {
+.wrapper.home section:nth-child(1) .subtitle {
     font-family: "NeueRegrade";
     font-weight: 700;
     font-size: 2rem;
@@ -50,17 +54,15 @@
     align-items: center;
     width: fit-content;
     vertical-align: top;
-    line-height: .8;
 }
 
-.wrapper.home section:first-child .first-details .subtitle span {
+.wrapper.home section:nth-child(1) .subtitle span {
     font-family: 'Emberly';
-    color: var(--accent-color);
     font-weight: 900;
     font-size: 3rem;
 }
 
-.wrapper.home section:first-child a {
+.wrapper.home section:nth-child(1) a {
     font-family: 'Emberly';
     display: block;
     background-color: var(--accent-color);
@@ -73,7 +75,7 @@
     text-decoration: none;
 }
 
-.wrapper.home section:first-child a:hover {
+.wrapper.home section:nth-child(1) a:hover {
     transform: scaleX(1.1);
     font-weight: 900;
     letter-spacing: .4rem;
@@ -87,4 +89,3 @@
     height: 100vh;
 
 }
-

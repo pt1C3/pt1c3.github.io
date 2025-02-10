@@ -4,7 +4,8 @@ import './projectsList.css';
 import Tilt from 'react-parallax-tilt';
 import { Helmet } from 'react-helmet';
 import projects from '../projects.json'; // Import the JSON data
-
+import checkTouchDevice from '../utils/checkTouch';
+import Loader from '../components/loader';
 
 const categories = ["Branding", "UI/UX", "Other"];
 
@@ -74,8 +75,7 @@ const BottomNav = ({ selectedCategories, onSelectCategory, footerRef }) => {
 };
 
 export default function ProjectsList({ footerRef }) {
-  // Check if its a touch device, where hover effects are not available
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const isTouch = checkTouchDevice();
   // Reference to the projects grid, so that we can observe the project cards, and show project info without hover
   const projectsGridRef = useRef(null);
 
@@ -102,21 +102,10 @@ export default function ProjectsList({ footerRef }) {
     }));
   };
 
-  useEffect(() => {
-    // Add touch-device class to the body if it's a touch device
-    const handleResize = () => {
-      // Detect if the device is a touch device
-      const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      setIsTouchDevice(touchDevice);
-      // Add or remove the 'touch-device' class to the body
-      document.body.classList.toggle('touch-device', touchDevice);
-    };
-    handleResize();
 
-  }, []);
 
   useEffect(() => {
-    if (!isTouchDevice) return;
+    if (!isTouch) return;
 
     // Use Intersection Observer to detect when elements are fully visible
     const observer = new IntersectionObserver(
@@ -141,7 +130,7 @@ export default function ProjectsList({ footerRef }) {
     return () => {
       projectCards.forEach((card) => observer.unobserve(card));
     };
-  }, [isTouchDevice]);
+  }, [isTouch]);
 
   // Transform an array of categories into a string
   function categoriesToString(arr) {
@@ -159,37 +148,59 @@ export default function ProjectsList({ footerRef }) {
       selectedCategories.every((category) => project.categories.includes(category))
     );
 
+    if(!filteredProjects) return <div></div>
   return (
     <>
       <Helmet> <title>Projects - 1C3 | Rafael Silva</title></Helmet>
       <div className="wrapper projects-list">
         <header className='header'>
-          <h1 className='title'>Projects</h1>
+          <h1 className='title'>
+           
+            Projects</h1>
           <p className='subtitle'>A portfolio of <span>thoughtfully</span> crafted designs with purpose and poise.</p>
         </header>
         <section className='grid-container'>
           <div className='projects-grid' ref={projectsGridRef}>
             {
               filteredProjects.map((item) => (
-                thumbnails[item.id] && ( // If it has thumbnail image
-                  <Tilt
-                  tiltReverse={true}
-                  tiltMaxAngleX={12}
-                  tiltMaxAngleY={12}
-                  perspective={1600}
-                  transitionSpeed={1600}
-                  gyroscope={true}
-                  glareEnable={false}
-                  easing="cubic-bezier(.03,.98,.52,.99)"
-                    key={item.id}>
-                    <Link to={"/project/" + item.id} className='project-card'>
+                thumbnails[item.id] && (
+                  !isTouch ? // If it has thumbnail image
+                    <Tilt
+                      tiltReverse={true}
+                      tiltMaxAngleX={12}
+                      scale={.9}
+                      tiltMaxAngleY={12}
+                      perspective={600}
+                      transitionSpeed={1600}
+                      gyroscope={false}
+                      glareEnable={true}
+                      easing="cubic-bezier(.03,.98,.52,.99)"
+                      key={item.id}>
+                      <Link to={"/project/" + item.id} className='project-card'>
+                        <img
+                          src={thumbnails[item.id]}
+                          alt={item.title}
+                          onLoad={() => handleImageLoad(item.id)} // Handle image load
+                          style={{ display: loadedImages[item.id] ? 'block' : 'none' }} // Show image only when loaded
+                        />
+                        {!loadedImages[item.id] && 
+                          <Loader />}
+                        <div className='info'>
+                          <h2 className='title'>{item.title}</h2>
+                          <h4 className='category'>{categoriesToString(item.categories)}</h4>
+                          <hr className='divider' />
+                          <p className='description'>{item.description}</p>
+                        </div>
+                      </Link>
+                    </Tilt>
+                    : <Link to={"/project/" + item.id} className='project-card'>
                       <img
                         src={thumbnails[item.id]}
                         alt={item.title}
                         onLoad={() => handleImageLoad(item.id)} // Handle image load
                         style={{ display: loadedImages[item.id] ? 'block' : 'none' }} // Show image only when loaded
                       />
-                      {!loadedImages[item.id] && <div className="image-placeholder">Loading...</div>}
+                      {!loadedImages[item.id] && <Loader />}
                       <div className='info'>
                         <h2 className='title'>{item.title}</h2>
                         <h4 className='category'>{categoriesToString(item.categories)}</h4>
@@ -197,7 +208,6 @@ export default function ProjectsList({ footerRef }) {
                         <p className='description'>{item.description}</p>
                       </div>
                     </Link>
-                  </Tilt>
                 )
 
               ))
