@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_1c3_portfolio=self.webpackChunk_1c3_portfolio||[]).push([[198],{6198:(e,t,p)=>{e.exports=p.p+"static/media/chatgpt.0ff5127a59544ee02f22.svg"}}]);

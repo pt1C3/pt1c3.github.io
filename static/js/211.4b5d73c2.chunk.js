@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_1c3_portfolio=self.webpackChunk_1c3_portfolio||[]).push([[211],{211:(e,s,i)=>{e.exports=i.p+"static/media/linkedin.8d10349e19aa882390e9.svg"}}]);

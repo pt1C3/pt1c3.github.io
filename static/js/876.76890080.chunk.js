@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_1c3_portfolio=self.webpackChunk_1c3_portfolio||[]).push([[876],{33876:(o,b,s)=>{o.exports=s.p+"static/media/Logo Symbol.26ba6fcb169fb75abb71.svg"}}]);

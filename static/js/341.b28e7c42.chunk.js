@@ -1,0 +1,1 @@
+(self.webpackChunk_1c3_portfolio=self.webpackChunk_1c3_portfolio||[]).push([[341],{89472:(o,c,e)=>{"use strict";e.r(c);e(91405)},42634:()=>{}}]);
