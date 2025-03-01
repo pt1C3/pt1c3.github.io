@@ -3,6 +3,7 @@ import bgImage from './images/background.png';
 import Cursor from './cursor';
 import ProjectsList from './views/projectsList';
 import Home from './views/home';
+import About from './views/about';
 import { Routes, Route, useLocation, Link, Navigate } from 'react-router-dom'
 import Project from './views/project';
 import { useState, useEffect, useRef } from 'react';
@@ -45,7 +46,9 @@ function App() {
       <Routes>
         <Route path="/portfolio" element={<Home />} />
         <Route path="/projects" element={<ProjectsList footerRef={footerRef} />} />
+        <Route path="/about" element={<About />} />
         <Route path="/project/:projectID" element={<Project />} />
+        
         <Route path="*" element={<Navigate to="/portfolio" />} />
       </ Routes>
       <Footer ref={footerRef} />

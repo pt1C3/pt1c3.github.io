@@ -1,0 +1,113 @@
+.about .social-media-info {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    padding: clamp(1.6rem, 1.6vw, 8rem);
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.about .social-media-info .spotify {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    min-height: 100%;
+    padding-top: 7.2rem;
+    position: relative
+}
+
+.about .social-media-info .spotify .spotify-logo {
+    height: 2.4rem;
+    top: 2.4rem;
+    position: absolute;
+}
+
+
+.about .social-media-info .spotify .recently-played {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about .social-media-info .spotify .currently-playing {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .about .social-media-info .spotify {
+        flex-direction: column;
+    }
+
+    .about .social-media-info .spotify-logo {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about .social-media-info .spotify .currently-playing {
+        align-items: center;
+        text-align: center;
+    }
+
+    .about .social-media-info .spotify .currently-playing .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .about .social-media-info .spotify .currently-playing img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+.about .social-media-info .spotify .recently-played-list {
+    width: 100%;
+}
+
+.about .social-media-info .spotify .recently-played-item {
+    outline: .16rem solid var(--accent-color);
+    border-radius: 0;
+    background-color: var(--black-color) ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    transition: .36s ease-in-out;
+}
+.about .social-media-info .spotify .recently-played-item .song-details{
+    width:100%;
+}
+
+.about .social-media-info .spotify .recently-played-item.selected {
+    background-color: var(--accent-color);
+}
+
+.about .social-media-info .spotify .recently-played-item .image-container {
+    height: 100%;
+
+}
+
+.about .social-media-info .spotify .recently-played-item .image-container img {
+    height: 100%;
+    width: auto;
+}
+
+.about .social-media-info .spotify .currently-playing a {
+    text-decoration: none;
+}
+
+.about .social-media-info .spotify .currently-playing a:hover {
+    text-decoration: underline wavy var(--white-color) .1rem;
+    font-weight: 900;
+}
+
+.about .social-media-info .spotify .currently-playing .song-details {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}

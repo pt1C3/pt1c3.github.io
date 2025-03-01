@@ -93,6 +93,12 @@ const Footer = React.forwardRef((props, ref) => {
           >
             projects
           </NavLink>
+          <NavLink 
+            to="/about" 
+            className={({ isActive }) => isActive ? 'footer-nav-item selected' : 'footer-nav-item'}
+          >
+            about
+          </NavLink>
         </div>
         {!project ? <p className='font-bold'>
          <Loader /></p> : <>

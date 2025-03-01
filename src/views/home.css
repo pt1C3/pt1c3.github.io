@@ -1,26 +1,25 @@
-
-
 .wrapper.home section {
     width: 100vw;
+    position: relative;
+    z-index: 1;
+
 }
 
 .wrapper.home section:nth-child(1) {
     padding: 0 clamp(1.6rem, 1.6vw, 8rem);
-    z-index: 1;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: calc(var(--regular-size) * 2);
     height: 100svh;
+    /*border-bottom: 0.16em solid var(--accent-color);*/
 }
-.wrapper.home section:nth-child(1)>.waves{
-    border-bottom: 0.1rem solid var(--accent-color);
-}
-.wrapper.home section:nth-child(1)>*{
+
+.wrapper.home section:nth-child(1)>* {
     z-index: 2;
 }
+
 @media (max-width: 860px) {
     .wrapper.home section:nth-child(1) {
         align-items: center;
@@ -61,8 +60,13 @@
     font-weight: 900;
     font-size: 3rem;
 }
+.wrapper.home section:nth-child(1) .links{
 
-.wrapper.home section:nth-child(1) a {
+    position: relative;
+    height: 3rem;
+    width: clamp(20rem, 30vw, 60rem);
+}
+.wrapper.home section:nth-child(1) .links a {
     font-family: 'Emberly';
     display: block;
     background-color: var(--accent-color);
@@ -73,10 +77,15 @@
     width: fit-content;
     transition: .3s;
     text-decoration: none;
+    position: absolute;
+    width: max-content;
+    text-align: center;
+    top:-100%;
 }
+.wrapper.home section:nth-child(1) .links a:first-child {left:0}
+.wrapper.home section:nth-child(1) .links a:last-child {right:0}
 
-.wrapper.home section:nth-child(1) a:hover {
-    transform: scaleX(1.1);
+.wrapper.home section:nth-child(1) .links a:hover {
     font-weight: 900;
     letter-spacing: .4rem;
 }
@@ -84,8 +93,14 @@
 .wrapper.home section:nth-child(2) {
     padding: 0 8vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100vh;
+    gap: 2rem;
+    text-align: center;
+}
 
+.wrapper.home section:nth-child(2) .bold {
+    font-weight: 900;
 }

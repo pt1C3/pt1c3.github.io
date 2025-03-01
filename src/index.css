@@ -26,6 +26,7 @@
   --inverted-accent-color: #99ff00;
   --inverted-accent-color-transp: #99ff0080;
   --regular-size: 1.2rem;
+  --secondary-size: .8rem;
   --header-1-size: 4rem;
   --header-2-size: 3rem;
   --header-3-size: 2rem;
@@ -88,7 +89,13 @@ body {
 .text-center {
   text-align: center;
 }
-
+.text-right {
+  text-align: right;
+}
+.text-secondary{
+  opacity: .64;
+  font-size: var(--secondary-size);
+}
 ::selection {
   background: var(--inverted-accent-color);
   color: var(--black-color);
@@ -125,4 +132,8 @@ body {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-italic {
+  font-style: italic;
 }

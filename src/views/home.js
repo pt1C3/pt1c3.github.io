@@ -5,7 +5,7 @@ import Logo from '../images/Logo.svg';
 import Profile from '../images/me.png';
 import { Helmet } from 'react-helmet';
 import TextPressure from '../blocks/TextAnimations/TextPressure/TextPressure';
-import DecryptedText from '../blocks/TextAnimations/DecryptedText/DecryptedText';
+import BlurText from '../blocks/TextAnimations/BlurText/BlurText';
 import ShinyText from '../blocks/TextAnimations/ShinyText/ShinyText';
 import Waves from '../blocks/Backgrounds/Waves/Waves';
 import checkTouchDevice from '../utils/checkTouch';
@@ -39,8 +39,11 @@ export default function Home() {
 
         <ShinyText disabled={false} speed={4.8} className='subtitle' />
 
+        <div className='links'>
+          <Link to="/projects">projects</Link>
+          <Link to="/about">about me</Link>
+        </div>
 
-        <Link to="/projects">projects</Link>
         <Waves
           lineColor={lineColor}
           backgroundColor="var(--gray-1-color)"
@@ -56,12 +59,26 @@ export default function Home() {
         />
       </section>
       <section>
-        <div>
-          <br/>
-          ...wip...
-        </div>
-      </section>
+        <BlurText
+          text="I'm a *web* *designer* and *developer* with a keen eye for aesthetics and functionality. Blending *design* with *code*, I craft intuitive, visually striking digital experiences that balance *creativity* and *usability*."
+          delay={20}
+          animateBy="words"
+          direction="top"
+        />
+        <BlurText
+          text="While my focus is on web design and development, I also dabble in *graphic* *design*, bringing a refined artistic touch to my work."
+          delay={20}
+          animateBy="words"
+          direction="top"
+        />
+        <BlurText
+          text="When I’m not building sleek interfaces, you’ll probably find me *sketching* *portraits* or diving into music and film. I’m *eager* *to* *create*, and *push* *boundaries* in the digital space."
+          delay={20}
+          animateBy="words"
+          direction="top"
+        />
 
+      </section>
     </div>
   );
 }

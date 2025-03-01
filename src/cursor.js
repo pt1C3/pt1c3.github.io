@@ -44,14 +44,14 @@ export default function Cursor() {
                 border-radius: 50%;
                 background-color: #fff;
                 mix-blend-mode: difference;
-                transition: transform 0.2s ease;
+                transition: transform 0.24s ease;
                 z-index: 9999;
-                animation: breathing 4s infinite;
+                animation: breathing 3.6s infinite;
               }
 
               .cursor.clicked {
                 animation: none;
-                transform: translate(-50%, -50%) scale(0.7)!important;
+                transform: translate(-50%, -50%) scale(0.64)!important;
               }
 
               @keyframes breathing {
